@@ -1,0 +1,40 @@
+{
+  // 브라우저 or node.js 의 전역 API에 대한 규칙을 적용
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": [
+    // eslint 에서 제공되는 JS 의 기본적인 규칙들을 사용하겠다 라는 의미
+    "eslint:recomanded",
+    // eslint vue 플러그인에서 제공하는 규칙을 사용함
+    "plugin:vue/vue3-recomanded"
+  ],
+  // 규칙 설정
+  "rules": {
+    // 세미 콜른 결정
+    "semi": ["error", "always"],
+    // 속성 코드 뒤 꺽쇠에 대한 규칙
+    "vue/html-closing-bracket-newline": [
+      "error",
+      {
+        // 한줄 일 경우 우측에 꺽쇠 기호 사용이 허용되지만..
+        "singleline": "never",
+        // 속성이 여러줄일 경우 허용하지 않음
+        "multilint": "always"
+      }
+    ],
+    "vue/html-self-closing": [
+      "error",
+      {
+        "html": {
+          "void": "never",
+          "normal": "always",
+          "component": "always"
+        },
+        "svg": "always",
+        "math": "always"
+      }
+    ]
+  }
+}
