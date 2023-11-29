@@ -117,12 +117,8 @@ export default {
 };
 
 async function _request(options) {
-  const { id = "" } = options;
-  return await fetch(`https://kdt-frontend.programmers.co.kr/documents/${id}`, {
-    ...options,
-    headers: {
-      "x-username": "Lee Jae Young",
-      "Content-Type": "application/json",
-    },
+  return await fetch("/.netlify/functions/workspace", {
+    method: "POST",
+    body: JSON.stringify(options),
   }).then((res) => res.json());
 }
