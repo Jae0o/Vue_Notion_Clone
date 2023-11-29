@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  functions = "functions"
+  publich = "dis"
+
+[dev]
+  framework = "#custom"
+  command = "npm run dev"
+  targetPort = 8080
+  port = 5500
+  publish ="dist"
+  autoLaunch = false
